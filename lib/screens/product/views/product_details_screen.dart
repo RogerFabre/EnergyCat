@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop/components/buy_full_ui_kit.dart';
 import 'package:shop/components/cart_button.dart';
 import 'package:shop/components/custom_modal_bottom_sheet.dart';
 import 'package:shop/components/product/product_card.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/screens/product/views/product_returns_screen.dart';
-
-import 'package:shop/route/screen_export.dart';
 
 import 'components/notify_me_card.dart';
 import 'components/product_images.dart';
@@ -75,8 +72,14 @@ class ProductDetailsScreen extends StatelessWidget {
                 customModalBottomSheet(
                   context,
                   height: MediaQuery.of(context).size.height * 0.92,
-                  child: const BuyFullKit(
-                      images: ["assets/screens/Product detail.png"]),
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: const Text("Product Details"),
+                    ),
+                    body: const Center(
+                      child: Text("Product Details"),
+                    ),
+                  ),
                 );
               },
             ),
@@ -87,8 +90,13 @@ class ProductDetailsScreen extends StatelessWidget {
                 customModalBottomSheet(
                   context,
                   height: MediaQuery.of(context).size.height * 0.92,
-                  child: const BuyFullKit(
-                    images: ["assets/screens/Shipping information.png"],
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: const Text("Shipping Information"),
+                    ),
+                    body: const Center(
+                      child: Text("Shipping Information"),
+                    ),
                   ),
                 );
               },
@@ -123,9 +131,7 @@ class ProductDetailsScreen extends StatelessWidget {
               svgSrc: "assets/icons/Chat.svg",
               title: "Reviews",
               isShowBottomBorder: true,
-              press: () {
-                Navigator.pushNamed(context, productReviewsScreenRoute);
-              },
+              press: () {},
             ),
             SliverPadding(
               padding: const EdgeInsets.all(defaultPadding),

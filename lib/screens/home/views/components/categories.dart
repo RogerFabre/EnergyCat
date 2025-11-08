@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop/route/screen_export.dart';
 
 import '../../../../constants.dart';
 
@@ -20,12 +19,11 @@ List<CategoryModel> demoCategories = [
   CategoryModel(name: "All Categories"),
   CategoryModel(
       name: "On Sale",
-      svgSrc: "assets/icons/Sale.svg",
-      route: onSaleScreenRoute),
+      svgSrc: "assets/icons/Sale.svg"),
   CategoryModel(name: "Man's", svgSrc: "assets/icons/Man.svg"),
-  CategoryModel(name: "Woman’s", svgSrc: "assets/icons/Woman.svg"),
+  CategoryModel(name: "Woman's", svgSrc: "assets/icons/Woman.svg"),
   CategoryModel(
-      name: "Kids", svgSrc: "assets/icons/Child.svg", route: kidsScreenRoute),
+      name: "Kids", svgSrc: "assets/icons/Child.svg"),
 ];
 // End For Preview
 
@@ -51,11 +49,7 @@ class Categories extends StatelessWidget {
                 category: demoCategories[index].name,
                 svgSrc: demoCategories[index].svgSrc,
                 isActive: index == 0,
-                press: () {
-                  if (demoCategories[index].route != null) {
-                    Navigator.pushNamed(context, demoCategories[index].route!);
-                  }
-                },
+                press: () {},
               ),
             ),
           ),
